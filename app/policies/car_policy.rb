@@ -17,7 +17,11 @@ class CarPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
+<<<<<<< HEAD
       scope.where(user: user)
+=======
+      scope.all
+>>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     end
   end
 

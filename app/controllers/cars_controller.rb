@@ -6,10 +6,18 @@ class CarsController < ApplicationController
   end
 
   def new
+<<<<<<< HEAD
+=======
+    authorize Car
+>>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     @car = Car.new
   end
 
   def create
+<<<<<<< HEAD
+=======
+    authorize Car
+>>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     car = Car.new(car_params)
     car.user = current_user
     if car.save
@@ -20,9 +28,17 @@ class CarsController < ApplicationController
   end
 
   def edit
+<<<<<<< HEAD
   end
 
   def update
+=======
+    authorize @car
+  end
+
+  def update
+    authorize @car
+>>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     if car.update(car_params)
       redirect_to car_path(@car)
     else
@@ -31,9 +47,17 @@ class CarsController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
   end
 
   def destroy
+=======
+    authorize @car
+  end
+
+  def destroy
+    authorize @car
+>>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     @car.update(car_params)
     redirect_to car_path(@car)
   end
