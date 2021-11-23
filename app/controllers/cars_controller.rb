@@ -44,6 +44,11 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
+  def listings
+    authorize Car
+    @cars = Car.where(user: current_user)
+  end
+
   private
 
   def car_params
