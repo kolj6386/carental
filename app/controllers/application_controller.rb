@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authorize_user!
+  before_action :authenticate_user!
 
   include Pundit
 
