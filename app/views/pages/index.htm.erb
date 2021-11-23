@@ -1,0 +1,16 @@
+<h1>All cars from database</h1>
+
+
+<% @index.each do |car| %>
+  <h3><%= link_to("#{car.make}, #{car.model}", new_rent_path(car.id)) %></h3>
+  <h2><strong><%= car.price %></strong></h2>
+  <h4><%= car.suburb %></h4>
+  <h4><%= car.seats %></h4>
+  <%= link_to "More info",
+            new_rent_path(car.id),
+            method: :new,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+<br>
+<br>
+<%= link_to "Rent this car", new_rent_path %>
