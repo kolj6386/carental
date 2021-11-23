@@ -1,6 +1,6 @@
 
 <div class="container mt-5 bg-light p-3">
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200');"></div>
+  <div class="banner" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200');"></div>
   <div class="row justify-content-around">
     <div class="col-6">
     <div class="bg-light">
@@ -16,7 +16,7 @@
     <div class="col-4">
     <div class="mb-3 bg-light">
       <h4 class="mb-3">Seats: <%= @car.seats %> </h4>
-      <h5 class="mb-3">Price per day: <%= @car.price %> </h5>
+      <h5 class="mb-3">Price per day: $<%= @car.price %> </h5>
     </div>
     <% if current_user == @car.user %>
       <div class='bg-light'>
@@ -28,5 +28,9 @@
       <% end %>
     </div>
   </div>
-
+  <div class="row justify-content-around">
+    <div class="col-11">
+      <%= link_to 'Back', cars_path, class: 'btn btn-primary mb-2' %>
+    </div>
+  </div>
 </div>
