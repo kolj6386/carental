@@ -1,0 +1,16 @@
+.footer {
+  border-top: 1px solid #EBEBEB;
+  bottom: 0px;
+  text-align: center;
+}
+
+.footer-items {
+  text-align: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-items a{
+  text-decoration: none!important;
+}
