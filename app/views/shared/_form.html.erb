@@ -1,0 +1,12 @@
+<%= simple_form_for(@car) do |f| %>
+<%= f.input :seats, label: 'How many seats does your car have?'%>
+<%= f.input :price, label: 'How much does your car cost per day?'%>
+<%= f.input :make, label: 'What make is your car? e.g Holden' %>
+<%= f.input :model, label: 'What model is your car? e.g Commodore'%>
+<%= f.input :transmission, label: 'Is your car automatic or manual?'%>
+<%= f.input :car_type, label: 'What type of car is it? e.g Sedvan/Van'%>
+<%= f.input :suburb, label: 'Which suburb is your car located in?'%>
+<div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
