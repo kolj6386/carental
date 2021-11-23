@@ -3,13 +3,27 @@ class CarPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def update?
-    @record.user == @user
+    user_is_owner?
+  end
+
+  def create?
+    user_is_owner?
   end
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
+  end
+
+  private
+
+  def user_is_owner?
+    @record.user == @user
   end
 end
