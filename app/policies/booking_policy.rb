@@ -11,11 +11,10 @@ class BookingPolicy < ApplicationPolicy
 
   def destory
     user_is_owner?
-    record.car.user_id == user
   end
 
   def create?
-    record.car.user_id != user
+    @record.car.user != @user
   end
 
   class Scope < Scope
