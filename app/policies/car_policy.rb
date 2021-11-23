@@ -12,7 +12,7 @@ class CarPolicy < ApplicationPolicy
   end
 
   def create?
-    user_is_owner?
+    true
   end
 
   class Scope < Scope

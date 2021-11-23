@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: %i[edit update destroy show]
 
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car)
   end
 
   def new
@@ -15,7 +15,7 @@ class CarsController < ApplicationController
     car = Car.new(car_params)
     car.user = current_user
     if car.save
-      redirect_to car_path(@car)
+      redirect_to car_path(car)
     else
       render :new
     end
@@ -47,7 +47,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:seats, :price, :make, :model, :trnasmission, :car_type, :suburb)
+    params.require(:car).permit(:seats, :price, :make, :model, :transmission, :car_type, :suburb)
   end
 
   def set_car
