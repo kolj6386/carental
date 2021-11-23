@@ -1,17 +1,25 @@
-<h1>All cars from database</h1>
 
-
-<% @cars.each do |car| %>
-  <h3><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h3>
-  <h2><strong><%= car.price %></strong></h2>
-  <h4><%= car.suburb %></h4>
-  <h4><%= car.seats %></h4>
-  <%= link_to "More info",
-            cars_path(car.id),
-            method: :new,
-            data: { confirm: "Are you sure?" } %>
-<% end %>
+<h1 class = "py-5">Cars that match your search</h1>
 
 
 
-<%# <%= link_to "Rent this car", new_rent_path %> %>
+  <div class="card-deck">
+  <div class="d-flex justify-content-center">
+    <% @cars.each do |car| %>
+      <div class="col-sm-4">
+      <div class="h-50">
+        <div class="card" style = "max-width: 24rem;">
+          <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h5>
+            <p class="card-text"><%= "This lovely #{car.make}, #{car.model} enjoys longs drives, can seat upto #{car.seats} and is a #{car.transmission}. Pickup from #{car.suburb}"%></p>
+            <div class="text-center">
+              <a href="cars_path(car.id)" class="btn btn-primary">More info </a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
