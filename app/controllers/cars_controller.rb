@@ -27,7 +27,7 @@ class CarsController < ApplicationController
 
   def update
     authorize @car
-    if car.update(car_params)
+    if Car.update(car_params)
       redirect_to car_path(@car)
     else
       render :new

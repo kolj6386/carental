@@ -16,7 +16,7 @@
     <div class="col-4">
     <div class="mb-3 bg-light">
       <h4 class="mb-3">Seats: <%= @car.seats %> </h4>
-      <h5 class="mb-3">Price per day: <%= @car.price %> </h5>
+      <h5 class="mb-3">Price per day: $<%= @car.price %> </h5>
     </div>
     <% if current_user == @car.user %>
       <div class='bg-light'>
