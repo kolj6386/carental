@@ -1,0 +1,32 @@
+
+<div class="container mt-5 bg-light p-3">
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200');"></div>
+  <div class="row justify-content-around">
+    <div class="col-6">
+    <div class="bg-light">
+      <h1> <%= @car.make %> <%= @car.model %> </h1>
+      <h2>  </h2>
+    </div>
+    <div class="bg-light">
+      <h3> Type: <%= @car.car_type %> </h3>
+      <h4> Location: <%= @car.suburb %></h4>
+      <p>Transmission: <%= @car.transmission %> </p>
+    </div>
+    </div>
+    <div class="col-4">
+    <div class="mb-3 bg-light">
+      <h4 class="mb-3">Seats: <%= @car.seats %> </h4>
+      <h5 class="mb-3">Price per day: <%= @car.price %> </h5>
+    </div>
+    <% if current_user == @car.user %>
+      <div class='bg-light'>
+        <%= link_to 'Edit', edit_car_path(@car.id), class: 'btn btn-primary mb-2' %>
+        <%= link_to 'Delete', car_path(@car.id), class: 'btn btn-danger ml-4 mb-2', method: 'delete', data: { confirm: "Are you sure?" } %>
+      </div>
+      <% else %>
+        <%= link_to 'Book', car_bookings_path(@car.id), class: 'btn btn-primary mb-2' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
