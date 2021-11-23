@@ -1,0 +1,11 @@
+<div class="navbar">
+    <h2><%= link_to "Carental", root_path %></h2>
+      <div class="login-form">
+        <% if user_signed_in?  %>
+          <li id="btn-log-in"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% else  %>
+          <li id="btn-sign-up"><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li id="btn-log-in"><%= link_to "Log In", user_session_path %></li>
+        <% end %>
+      </div>
+</div>
