@@ -1,0 +1,12 @@
+<div class="mx-auto" style="width: 400px;">
+<% @cars.each do |car| %>
+  <h3><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h3>
+  <h2><strong><%= car.price %></strong></h2>
+  <h4><%= car.suburb %></h4>
+  <h4><%= car.seats %></h4>
+  <%= link_to "More info",
+            cars_path(car.id),
+            method: :new,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+</div>
