@@ -1,19 +1,21 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[edit update destroy show]
+  before_action :set_car, only: %i[new create]
 
   def index
     @bookings = policy_scope(Booking)
   end
 
   def new
-    authorize Booking
     @booking = Booking.new
+    @booking.car = @car
+    authorize @booking
   end
 
   def create
-    authorize Booking
     booking = booking.new(booking_params)
-    booking.user = current_user
+    booking.car = @car
+    authorize booking
     if booking.save
       redirect_to booking_path(booking)
     else
@@ -52,5 +54,9 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_car
+    @car = Car.find(params[:car_id])
   end
 end
