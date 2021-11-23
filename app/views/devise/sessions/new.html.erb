@@ -13,7 +13,6 @@
       <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %></div>
-<<<<<<< HEAD
       <div class= "d-flex justify-content-between">
         <div class="pb-2">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
@@ -24,27 +23,6 @@
       </div>
     </div>
 
-=======
-      <div class="py-2">
-      <%= f.input :first_name,
-                  required: false,
-                  input_html: { autocomplete: "first name" } %></div>
-      <div class="py-2">
-      <%= f.input :last_name,
-                  required: false,
-                  input_html: { autocomplete: "last name" } %></div>
-
-      <div class= "d-flex justify-content-between">
-        <div class="pb-2">
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
-        <div class="form-actions">
-          <div>
-            <%= render "devise/shared/forgot" %>
-        </div>
-      </div>
-    </div>
-
->>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
   <div class="span2">
     <p><button class="btn btn-primary btn-block"><%= f.button :submit, "Log in" %></button></p>
     <%= render "devise/shared/signup" %>

@@ -19,7 +19,6 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %></div>
-<<<<<<< HEAD
     <div class="py-2">
           <%= f.input :first_name,
                   required: true,
@@ -31,12 +30,6 @@
   </div>
     <div class="span2">
       <p><button class="btn btn-success btn-block"><%= f.button :submit, "Sign Up" %></button></p>
-=======
-  </div>
-    <%= render "devise/shared/links" %>
-    <div class="span2">
-      <p><button class="btn btn-primary btn-block"><%= f.button :submit, "Sign Up" %></button></p>
->>>>>>> f2047a1d822a0f4dfd4d805fb5140226c83c6f5b
     <%= render "devise/shared/signup" %>
   </div>
 <% end %>
