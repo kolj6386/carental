@@ -15,6 +15,10 @@ class CarPolicy < ApplicationPolicy
     true
   end
 
+  def listings?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all
