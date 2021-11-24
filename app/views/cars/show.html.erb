@@ -1,9 +1,9 @@
 
 <div class="container mt-5 bg-light p-3">
-  <% if @car && @car.photo.key %>
+  <% if @car.photo.attached? %>
     <% @url = cl_image_path(@car.photo.key, height: 300, crop: :scale) %>
   <% else %>
-    <% @url = 'https://source.unsplash.com/1200x900' %>
+    <% @url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' %>
   <% end %>
 
   <div class="banner" style="background-image: url(<%= @url %>);"></div>
