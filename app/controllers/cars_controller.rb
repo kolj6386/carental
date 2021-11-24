@@ -41,7 +41,7 @@ class CarsController < ApplicationController
   def destroy
     authorize @car
     @car.destroy
-    redirect_to car_path(@car)
+    redirect_to listings_cars_path
   end
 
   def listings
