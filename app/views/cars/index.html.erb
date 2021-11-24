@@ -2,7 +2,7 @@
 <h1 class = "py-5">Cars that match your search</h1>
 
 
-
+<div class=container>
   <div class="card-deck">
   <div class="d-flex justify-content-center">
     <% @cars.each do |car| %>
@@ -14,12 +14,13 @@
             <h5 class="card-title"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h5>
             <p class="card-text"><%= "This lovely #{car.make}, #{car.model} enjoys longs drives, can seat upto #{car.seats} and is a #{car.transmission}. Pickup from #{car.suburb}"%></p>
             <div class="text-center">
-              <a href="cars_path(car.id)" class="btn btn-primary">More info </a>
+              <%= link_to "More Info", car_path(car) %>
             </div>
           </div>
           </div>
         </div>
       </div>
     <% end %>
+  </div>
   </div>
 </div>
