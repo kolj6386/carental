@@ -30,7 +30,7 @@
         <%= link_to 'Delete', car_path(@car.id), class: 'btn btn-danger ml-4 mb-2', method: 'delete', data: { confirm: "Are you sure?" } %>
       </div>
       <% else %>
-        <%= link_to 'Book', car_bookings_path(@car.id), class: 'btn btn-primary mb-2' %>
+        <%= link_to 'Book',  new_car_booking_path(@car.id), class: 'btn btn-primary mb-2' %>
       <% end %>
     </div>
   </div>
