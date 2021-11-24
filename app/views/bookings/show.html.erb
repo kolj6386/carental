@@ -1,15 +1,42 @@
 <div class="container">
-  <h2>My Bookings!</h2>
+<div class="container mt-5 bg-light p-3">
+  <% if @booking.car.photo.attached? %>
+    <% @url = cl_image_path(@booking.car.photo.key, height: 300, crop: :scale) %>
+  <% else %>
+    <% @url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' %>
+  <% end %>
 
-  <div class="cards">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://media.istockphoto.com/photos/standing-desk-calendar-october-2021-picture-id1302146874?b=1&k=20&m=1302146874&s=170667a&w=0&h=viyj2FXYjKCi76ttg31hgn9ASgTvfsMDDIZ7vHsr2YI=" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Your Booking</h5>
-          <p class="card-text">Booking start date:  <%= @booking.start_date %>, <br>Booking end date:  <%= @booking.end_date %></p>
+  <div class="banner" style="background-image: url(<%= @url %>);"></div>
+
+  <div class="row justify-content-around">
+    <div class="col-6">
+    <div class="bg-light">
+      <h2> <%= @booking.car.make %> <%= @booking.car.model %> </h2>
+    </div>
+    <div class="mb-3 bg-light">
+      <h4 class="mb-3">Seats: <%= @booking.car.seats %> </h4>
+    </div>
+    <div class="bg-light">
+      <h3> Type: <%= @booking.car.car_type %> </h3>
+      <h4> Location: <%= @booking.car.suburb %></h4>
+      <h5>Transmission: <%= @booking.car.transmission %> </h5>
+    </div>
+    </div>
+    <div class="col-4">
+     <h5 class="card-text">Booking start date:  <%= @booking.start_date %></h5>
+     <h5>Booking end date:  <%= @booking.end_date %></h5>
+     <h5 class="mb-3">Price per day: $<%= @booking.car.price %> </h5>
+      <% if current_user != @booking.car.user %>
+        <div class='bg-light'>
           <%= link_to 'Edit', edit_booking_path(@booking.id), class: 'btn btn-primary mb-2' %>
           <%= link_to 'Delete', booking_path(@booking), class: 'btn btn-danger ml-4 mb-2', method: 'delete', data: { confirm: "Are you sure?" } %>
         </div>
-      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-11">
+      <%= link_to 'Back', bookings_path, class: 'btn btn-primary mb-2' %>
+    </div>
   </div>
 </div>
