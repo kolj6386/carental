@@ -19,6 +19,10 @@ class CarPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    user_is_owner?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

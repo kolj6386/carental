@@ -40,7 +40,7 @@ class CarsController < ApplicationController
 
   def destroy
     authorize @car
-    @car.update(car_params)
+    @car.destroy
     redirect_to car_path(@car)
   end
 

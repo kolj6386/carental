@@ -13,13 +13,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    booking = booking.new(booking_params)
+    booking = Booking.new(booking_params)
     booking.car = @car
+    booking.user = current_user
     authorize booking
     if booking.save
       redirect_to booking_path(booking)
     else
-      render :new
+      (render new_car_booking_path(@car.id))
     end
   end
 
@@ -29,7 +30,7 @@ class BookingsController < ApplicationController
 
   def update
     authorize @booking
-    if booking.update(booking_params)
+    if @booking.update(booking_params)
       redirect_to booking_path(@booking)
     else
       render :new

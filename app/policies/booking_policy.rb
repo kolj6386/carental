@@ -1,8 +1,7 @@
 class BookingPolicy < ApplicationPolicy
 
   def show?
-    user_is_owner?
-    record.car.user_id == user
+    user_is_owner? || record.car.user_id == user
   end
 
   def update?
