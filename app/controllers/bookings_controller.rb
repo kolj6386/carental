@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
   def destroy
     authorize @booking
     @booking.delete
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   private
