@@ -8,7 +8,7 @@ class BookingPolicy < ApplicationPolicy
     user_is_owner?
   end
 
-  def destory
+  def destory?
     user_is_owner?
   end
 
