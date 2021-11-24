@@ -1,11 +1,17 @@
 
 <div class="container mt-5 bg-light p-3">
-  <div class="banner" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200');"></div>
+  <% if @car && @car.photo.key %>
+    <% @url = cl_image_path(@car.photo.key, height: 300, crop: :scale) %>
+  <% else %>
+    <% @url = 'https://source.unsplash.com/1200x900' %>
+  <% end %>
+
+  <div class="banner" style="background-image: url(<%= @url %>);"></div>
+
   <div class="row justify-content-around">
     <div class="col-6">
     <div class="bg-light">
       <h1> <%= @car.make %> <%= @car.model %> </h1>
-      <h2>  </h2>
     </div>
     <div class="bg-light">
       <h3> Type: <%= @car.car_type %> </h3>
