@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>Your Bookings Cars</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <% @cars.each do |car| %>
+      <div class="col-sm-4">
+        <div class="h-50">
+          <div class="card" style = "max-width: 24rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h5>
+              <p class="card-text"><%= "This lovely #{car.make}, #{car.model} enjoys longs drives, can seat upto #{car.seats} and is a #{car.transmission}. Pickup from #{car.suburb}"%></p>
+              <div class="text-center">
+                <%= link_to "Remove", booking_path(@booking.id) %>
+                <br>
+                <br>
+                <%= link_to "Edit", edit_booking_path(@booking.id) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%end %>
+  </div>
