@@ -1,27 +1,111 @@
  .banner {
     width: 100%;
-    height: 600px;
+    height: 100vh;
     background-position: center;
     background-size: cover;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
  }
 
 .banner h1 {
   color: white;
   text-align: center;
   font-size: 7rem;
+  letter-spacing: 0.2rem;
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-  padding: 8rem;
+  padding: 1rem;
 }
 
 .banner p {
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   color: white!important;
-  text-align: center;
-  font-size: 2rem;
+  font-size: 25px;
+  margin-bottom: -33px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
-.browse-heading h2 {
-  color: black;
+.searchbar {
+  appearance: none;
+  padding: 12px 24px 12px 40px;
+  outline: none;
   text-align: center;
-  font-size: 2rem;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: var(--hover-duration-fast);
+  height: 3.1rem;
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 500px;
+}
+
+.sbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.seperator {
+  width: 100vw;
+  margin-top: 24px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.lineleft {
+  background-color: #2fb075;
+  height: 2px;
+  width: 32%;
+  max-width: 190px;
+  margin: 0px 8px;
+}
+
+.lineright {
+  background-color: #2fb075;
+  height: 2px;
+  width: 32%;
+  max-width: 190px;
+  margin: 0px 8px;
+}
+
+.ortext {
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  color: white!important;
+}
+
+.orange-buttons {
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  background-color: #f74;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  border: 2px solid #f74;
+  text-decoration: none!important;
+  padding: 12px 60px;
+  margin: 1rem 0.5rem;
+  min-width: 360px;
+  text-align: center;
+}
+
+.orange-buttons:hover {
+  background-color: transparent;
+  transition: 0.5s ease all;
+  color: white;
+}
+
+.search_icon {
+  height: 24px;
+  width: 24px;
 }
