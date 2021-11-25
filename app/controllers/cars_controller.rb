@@ -47,6 +47,7 @@ class CarsController < ApplicationController
         lat: @car.latitude,
         lng: @car.longitude
       }]
+      @booking = Booking.new
   end
 
   def destroy
