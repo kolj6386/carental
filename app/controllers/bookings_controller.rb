@@ -38,6 +38,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @review = BookingReview.new
     authorize @booking
   end
 
