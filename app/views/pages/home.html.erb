@@ -1,46 +1,16 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');">
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80');">
+  <p>USA's Easiest Car Rental Service</p>
   <h1>Carental</h1>
-  <p>The USA's Easiest Car Rental Service. (Ever)</p>
-</div>
+  <div class="sbar-container">
+    <input aria-label="search" type="search" placeholder="Search Carental" class="searchbar" value="">
+  </div>
 
-<div class="browse-heading">
-  <h2>Looking For Your Dream Rental? Or Maybe Looking To Make Some Money</h2>
-    <div class="row">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://cdn.motor1.com/images/mgl/BjYyj/s1/loef-camper-van.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Rent a Car</h5>
-          <p class="card-text">Find the dream car for the dream roadtrip.</p>
-          <a href="#"><%= link_to "Find Me a Car!", cars_path, class: "btn btn-primary" %></a>
-        </div>
-      </div>
+  <div class="seperator">
+    <div class="lineleft"></div>
+    <span class="ortext">OR</span>
+    <div class="lineright"></div>
+  </div>
 
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://image.shutterstock.com/mosaic_250/1905413/1449758987/stock-photo-close-up-of-calendar-and-alarm-clock-on-the-green-background-planning-for-business-meeting-or-1449758987.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">View My bookings</h5>
-          <p class="card-text">Prepare those adventures with Carental!</p>
-          <a href="#"><%= link_to "My Bookings!", bookings_path, class: "btn btn-primary" %></a>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://thriftytraveler.com/wp-content/uploads/2018/05/why-kei-51455-unsplash-e1527681798897.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Rent my Car</h5>
-          <p class="card-text">Got an extra car lying around? Make some extra money on it today!</p>
-          <a href="#"><%= link_to "List My Car!", new_car_path, class: "btn btn-primary" %></a>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://ei.marketwatch.com/Multimedia/2013/11/26/Photos/MG/MW-BP914_Mustan_20131126132618_MG.jpg?uuid=47eb7026-56c8-11e3-a73a-00212803fad6" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">View My Listings</h5>
-          <p class="card-text">Have a look at all your cars!</p>
-          <a href="#"><%= link_to "My Listings!", listings_cars_path, class: "btn btn-primary" %></a>
-        </div>
-      </div>
-    </div>
+  <a><%= link_to "RENT A CAR", cars_path, class: "orange-buttons" %></a>
+  <a><%= link_to "MANAGE MY LISTINGS", listings_cars_path, class: "orange-buttons" %></a>
 </div>
