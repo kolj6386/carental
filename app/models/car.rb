@@ -1,5 +1,7 @@
 class Car < ApplicationRecord
   belongs_to :user
+  geocoded_by :suburb
+  after_validation :geocode, if: :will_save_change_to_suburb?
 
   has_many :bookings
   has_many :booking_reviews, through: :bookings
