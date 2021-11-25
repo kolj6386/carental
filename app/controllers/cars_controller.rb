@@ -3,6 +3,12 @@ class CarsController < ApplicationController
 
   def index
     @cars = policy_scope(Car)
+      @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude
+      }
+      end
   end
 
   def new
@@ -36,6 +42,11 @@ class CarsController < ApplicationController
 
   def show
     authorize @car
+    @markers =
+      [{
+        lat: @car.latitude,
+        lng: @car.longitude
+      }]
   end
 
   def destroy
