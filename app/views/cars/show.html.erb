@@ -44,3 +44,36 @@
     </div>
   </div>
 </div>
+
+ <div class = "container">
+    <div>
+      <h2>Booking</h2>
+      <% if current_user == @car.user %>
+        <%@car.bookings.each do |booking| %>
+          <div class = "container">
+            <h3> <%= booking.user.first_name %> <%= booking.user.last_name %></h3>
+            <h4>Start Date</h4><%= booking.start_date %>
+            <h4>End Date</h4><%= booking.end_date %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class = "container">
+    <div>
+      <h2>Reviews</h2>
+      <%@car.booking_reviews.each do |review| %>
+      <div class = "container">
+        <h3> <%= review.booking.user.first_name %> <%= review.booking.user.last_name %></h3>
+        <h4>Rating</h4><%= review.rating %>
+        <h4>Content</h4><%= review.content %>
+      </div>
+      <% end %>
+    </div>
+  </div>
