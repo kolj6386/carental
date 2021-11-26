@@ -6,13 +6,16 @@
     <% @url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' %>
   <% end %>
 
-  <div class="col-sm-4 mb-3">
-  <div class="h-50">
+  <div class="col-sm-4">
+  <div class="curves">
     <div class="card">
       <img class="card-img-top" src=<%= @url %> style = "height: 200px">
       <div class="card-body">
         <h5 class="card-title"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h5>
-        <p class="card-text"><%= "This lovely #{car.make}, #{car.model} enjoys longs drives, can seat upto #{car.seats} and is a #{car.transmission}. Pickup from #{car.suburb}"%></p>
+        <p class="card-text"><%= "Seats: #{car.seats}"%></p>
+        <p class="card-text"><%= "Transmission: #{car.transmission}"%></p>
+        <p class="card-text"><%= "Location: #{car.suburb}"%></p>
+        <h3 class="card-text"><%= "Price: #{car.price}"%></h3>
         <div class="text-center">
           <%= link_to "More Info", car_path(car) %>
         </div>

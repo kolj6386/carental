@@ -1,12 +1,14 @@
+<div id="map"
+     style="width: 100%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
 <div class=container>
+
 <h1 class = "py-5">Browse Cars</h1>
       <div class="row justify-content-start">
         <%= render "cars", cars: @cars %>
       </div>
-</div>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
