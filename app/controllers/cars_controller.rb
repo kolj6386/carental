@@ -59,6 +59,12 @@ class CarsController < ApplicationController
   def listings
     authorize Car
     @cars = Car.where(user: current_user)
+    @markers = @cars.geocoded.map do |car|
+    {
+      lat: car.latitude,
+      lng: car.longitude
+    }
+    end
   end
 
   private
