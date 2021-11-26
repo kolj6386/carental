@@ -3,9 +3,35 @@
   margin-top: 0;
   list-style: none;
   padding: 0.5rem 15rem!important;
+  position: fixed!important;
+  background-color: transparent;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #f5f5f5!important;
+  background-color: rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.navbar h2 a:hover {
+.link {
+  color: #f5f5f5!important;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  font-size: 16px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.link:hover {
+  color: #f74!important;
+  text-decoration: none;
+}
+
+.logo {
+  text-decoration: none;
+  color: #f74!important;
+  font-weight: 500;
+}
+
+.logo:hover {
   text-decoration: none;
 }
 
@@ -15,11 +41,6 @@
   align-items: center;
 }
 
-#btn-log-in {
-  background-color: #167FFB;
-  border-radius: 50px;
-  padding: 10px 1.2rem;
-}
 
 #btn-log-in a {
   color: white;
@@ -30,14 +51,19 @@
   margin: none;
 }
 
-#btn-log-in:hover {
-  background-color: #0077ff;
-}
-
 .login-form #btn-sign-up a {
   font-size: 1.2rem;
   text-decoration: none;
   padding: 0 2rem;
   align-items: center;
   color: black;
+}
+
+.logodiv  {
+  overflow: hidden;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
