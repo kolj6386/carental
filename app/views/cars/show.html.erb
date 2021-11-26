@@ -1,10 +1,10 @@
 <div id="map"
-     style="width: 100%; height: 500px;"
+     style="width: 100%; height: 25vw;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<div class="container mt-0 p-3">
+<div class="mt-0 p-3 mx-auto" style="width: 90%;">
   <% if @car.photo.attached? %>
     <% @url = cl_image_path(@car.photo.key, height: 300, crop: :scale) %>
   <% else %>
@@ -13,22 +13,42 @@
 
 
   <div class="row justify-content-around mt-0">
-    <div class="col-8">
-      <div class="bg-light rounded p-3 shadow d-flex justify-content-center mb-3">
-      <%= image_tag @url, style: 'height:300px;'%>
+    <div class="col-3">
+      <div style="height: 30vw;" class="car_card rounded p-3 shadow p-4 mb-5 overflow-scroll">
+        <h2>Reviews</h2>
+        <%@car.booking_reviews.each do |review| %>
+          <div class='bg-white p-3 mb-2'>
+            <div class="d-flex justify-content-between border-bottom mb-2 align-items-end">
+              <h4><%= review.booking.user.first_name.capitalize %> <%= review.booking.user.last_name.capitalize %></h4>
+              <h5>Rating: <%= review.rating %> stars</h4>
+            </div>
+            <h5><%= review.content %></h4>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="bg-light rounded p-3 shadow mb-3">
-      <h1> <%= @car.make %> <%= @car.model %> </h1>
-      <h3> Type: <%= @car.car_type %> </h3>
-      <h4> Location: <%= @car.suburb %></h4>
-      <h4>Seats: <%= @car.seats %> </h4>
-      <h5>Price per day: $<%= @car.price %> </h5>
-      <p>Transmission: <%= @car.transmission %> </p>
+    <div class="col-5">
+      <div class="car_card rounded p-3 shadow d-flex justify-content-center mb-3">
+      <%= image_tag @url, style: 'height:250px;'%>
+    </div>
+    <div class="car_card rounded p-3 shadow mb-3">
+          <h1> <%= @car.make %> <%= @car.model %></h1>
+      <div class="d-flex justfy-contents-between">
+        <div>
+          <h3> Type: <%= @car.car_type %> </h3>
+          <h4> Location: <%= @car.suburb %></h4>
+          <p>Transmission: <%= @car.transmission %> </p>
+        </div>
+        <div>
+          <h4>Seats: <%= @car.seats %> </h4>
+          <h5>Price per day: $<%= @car.price %> </h5>
+        </div>
+      </div>
     </div>
 
 
     <% if current_user == @car.user %>
-      <div class="bg-light rounded p-3 shadow p-4 mb-5">
+      <div class="car_card rounded p-3 shadow p-4 mb-5">
         <h2>Bookings</h2>
         <% if current_user == @car.user %>
           <%@car.bookings.each do |booking| %>
@@ -42,30 +62,18 @@
       </div>
     <% end %>
 
-    <div class="bg-light rounded p-3 shadow p-4 mb-5">
-      <h2>Reviews</h2>
-      <%@car.booking_reviews.each do |review| %>
-        <div class='bg-white p-3 mb-2'>
-          <div class="d-flex justify-content-between border-bottom mb-2 align-items-end">
-            <h4><%= review.booking.user.first_name.capitalize %> <%= review.booking.user.last_name.capitalize %></h4>
-            <h5>Rating: <%= review.rating %> stars</h4>
-          </div>
-          <h5><%= review.content %></h4>
-        </div>
-      <% end %>
-    </div>
   </div>
 
 
-    <div class="col-4">
+    <div class="col-3">
       <div class="sticky-top">
       <% if current_user == @car.user %>
-        <div class="bg-light rounded p-3 shadow p-4 mb-5">
+        <div class="car_card rounded p-3 shadow p-4 mb-5">
           <%= link_to 'Edit', edit_car_path(@car.id), class: 'btn btn-primary mb-2' %>
           <%= link_to 'Delete', car_path(@car.id), class: 'btn btn-danger ml-4 mb-2', method: 'delete', data: { confirm: "Are you sure?" } %>
         </div>
       <% else %>
-        <div class="bg-light rounded p-3 shadow p-4 mb-5">
+        <div class="car_card rounded p-3 shadow p-4 mb-5">
           <%= simple_form_for([@car, @booking]) do |f| %>
             <%= f.input :start_date, label: 'What day would you like to rent the car?'%>
             <%= f.input :end_date, label: 'When would you like to return the car?'%>
