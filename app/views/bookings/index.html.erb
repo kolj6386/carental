@@ -5,14 +5,14 @@
       <h1>Your Bookings Cars</h1>
     </div>
   </div>
-  <div class = "row justify-content-start">
+  <div class = "row justify-content-around">
     <% @bookings.each do |booking| %>
       <% if booking.car.photo.attached? %>
         <% @url = cl_image_path(booking.car.photo.key, height: 300, crop: :scale) %>
       <% else %>
         <% @url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' %>
       <% end %>
-      <div class="col-sm-4">
+      <div class="col-4">
         <div class="h-50">
           <div class="card" style = "max-width: 24rem;">
             <img class="card-img-top" src=<%= @url %> alt="Card image cap">
@@ -21,7 +21,8 @@
               <p class="card-text"><%= "Car is yours from #{booking.start_date} until #{booking.end_date}"%></p>
             </div>
           </div>
-          <%end %>
       </div>
     </div>
+    <%end %>
+  </div>
 </div>
