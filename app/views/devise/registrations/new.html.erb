@@ -1,5 +1,6 @@
-<div class="mx-auto" style="width: 400px;" style="background-image: url('https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80');">
-  <div class="padding-top">
+<div class="outer-container" style="background-image: url('https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80');">
+<div class="mx-auto" style="width: 400px;">
+  <div class="signup-container">
 <h2 class = "text-center">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -33,3 +34,4 @@
     <%= render "devise/shared/signup" %>
   </div>
 <% end %>
+</div>
