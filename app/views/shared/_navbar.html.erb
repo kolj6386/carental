@@ -1,11 +1,26 @@
 <div class="navbar">
-    <h2><%= link_to "Carental", root_path %></h2>
-      <div class="login-form">
-        <% if user_signed_in?  %>
-          <li id="btn-log-in"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else  %>
-          <li id="btn-sign-up"><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li id="btn-log-in"><%= link_to "Log In", user_session_path %></li>
-        <% end %>
+      <li class="nav-item">
+        <%= link_to "Browse", cars_path, class: "link"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "My Bookings", bookings_path, class: "link"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "List My Car", new_car_path, class: "link"%>
+      </li>
+      <div class="logodiv">
+         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_lcmbmqz5.json"  background="transparent"  speed="1"  style="width: 200px; height:200px;"  loop  hover></lottie-player>
       </div>
+      <li class="nav-item">
+        <%= link_to "My Listings", listings_cars_path, class: "link"%>
+      </li>
+
+      <% if user_signed_in?  %>
+        <li id="btn-log-in"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "link" %></li>
+      <% else  %>
+        <li id="btn-sign-up"><%= link_to "Sign Up", new_user_registration_path, class: "link" %></li>
+        <li id="btn-log-in"><%= link_to "Log In", user_session_path, class: "link" %></li>
+      <% end %>
+
 </div>
