@@ -8,10 +8,12 @@
       <li class="nav-item">
         <%= link_to "List My Car", new_car_path, class: "link"%>
       </li>
+          <%= link_to root_path do %>
       <div class="logodiv">
          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
           <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_lcmbmqz5.json"  background="transparent"  speed="1"  style="width: 200px; height:200px;"  loop  hover></lottie-player>
       </div>
+          <% end %>
       <li class="nav-item">
         <%= link_to "My Listings", listings_cars_path, class: "link"%>
       </li>
