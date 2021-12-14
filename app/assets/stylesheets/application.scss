@@ -1,8 +1,10 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
+@import "config/bootstrap_variables";
 
 // External libraries
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -10,4 +12,3 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/booking_index";
-@import "pages/car_index"
