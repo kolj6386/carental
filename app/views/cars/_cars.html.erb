@@ -6,21 +6,22 @@
     <% @url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png' %>
   <% end %>
 
-  <div class="col-sm-4">
-  <div class="curves">
-    <div class="card">
-      <img class="card-img-top" src=<%= @url %> style = "height: 200px">
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h5>
-        <p class="card-text"><%= "Seats: #{car.seats}"%></p>
-        <p class="card-text"><%= "Transmission: #{car.transmission}"%></p>
-        <p class="card-text"><%= "Location: #{car.suburb}"%></p>
-        <h3 class="card-text"><%= "Price: #{car.price}"%></h3>
-        <div class="text-center">
-          <%= link_to "More Info", car_path(car) %>
+<div class="card-container">
+  <div class="card">
+    <div>
+      <img class="card-img-top" src=<%= @url %>>
+        <div class="card-heading">
+          <h2 class="heading"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h2>
+          <div class="linebreak"></div>
+          <p><b><%= link_to "Price: #{car.price}", cars_path(car.id), class: "subheading" %></b></p>
         </div>
-      </div>
+        <div class="car-info">
+          <span><i class="fas fa-chair"></i> <%="#{car.seats}"%></span>
+          <span><i class="fas fa-cog"></i> <%= "#{car.transmission}"%></span>
+          <span><i class="fas fa-compass"></i> <%= "#{car.suburb}"%></span>
+        </div>
       </div>
     </div>
   </div>
+</div>
 <% end %>

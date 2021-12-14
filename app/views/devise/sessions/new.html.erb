@@ -1,7 +1,7 @@
 <div class="outer-container" style="background-image: url('https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80');">
 <div class="mx-auto" style="width: 400px;">
-  <div class="mt-0 padding-top">
-    <h2 class = "form-headings">Log in</h2></div>
+  <div class="mt-0">
+    <h2 class = "form-headings">LOG IN</h2></div>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <div class="py-2">
@@ -17,7 +17,7 @@
         <div class="pb-2">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
         <div class="form-actions">
-          <div>
+          <div class="forgotpword">
             <%= render "devise/shared/forgot" %>
         </div>
       </div>
