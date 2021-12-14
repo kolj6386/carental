@@ -48,52 +48,63 @@
 
 .py-2 input {
   background-color: rgba(255,255,255,0.9)!important;
+  border-radius: 3px;
+  height: 3rem;
 }
 
-// .btn-success {
-//   letter-spacing: 0.2rem!important;
-//   font-weight: 500!important;
-//   background-color: #f74!important;
-//   border: 2px solid #f74!important;
-//   padding: 12px 60px!important;
-//   margin: 1rem 0.5rem!important;
-//   text-align: center!important;
-//   justify-content: center!important;
-// }
+.forgotpword  {
+  color: #2fb075;
+}
 
-// .btn-success:hover {
-//   background-color: transparent!important;
-//   transition: 0.5s ease all!important;
-//   color: white!important;
-// }
+.btn-success {
+  color: white;
+  letter-spacing: 0.2rem!important;
+  font-weight: 500!important;
+  background-color: #f74!important;
+  border: 2px solid #f74!important;
+  padding: 12px 60px!important;
+  margin: 1rem 0.5rem!important;
+  text-align: center!important;
+  justify-content: center!important;
+  font-family: 'Roboto', sans-serif!important;
+}
 
-// .btn-success input {
-//   color: white!important;
-//   font-family: 'Roboto', sans-serif!important;
-//   font-size: 19px!important;
-//   text-decoration: none!important;
-// }
+.btn-success:hover {
+  background-color: transparent!important;
+  transition: 0.5s ease all!important;
+  color: white!important;
+  font-family: 'Roboto', sans-serif!important;
+}
 
-// .btn-primary {
-//   letter-spacing: 0.2rem!important;
-//   font-weight: 500!important;
-//   background-color: #2fb075!important;
-//   border: 2px solid #2fb075!important;
-//   padding: 12px 60px!important;
-//   margin: 1rem 0.5rem!important;
-//   text-align: center!important;
-//   justify-content: center!important;
-// }
+.btn-success input {
+  color: white!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-size: 19px!important;
+  text-decoration: none!important;
+}
 
-// .btn-primary:hover {
-//   background-color: transparent!important;
-//   transition: 0.5s ease all!important;
-//   color: white!important;
-// }
+.btn-primary {
+  letter-spacing: 0.2rem!important;
+  font-weight: 500!important;
+  background-color: #2fb075!important;
+  border: 2px solid #2fb075!important;
+  padding: 12px 60px!important;
+  margin: 1rem 0.5rem!important;
+  text-align: center!important;
+  justify-content: center!important;
+  font-family: 'Roboto', sans-serif!important;
+}
 
-// .btn-primary input {
-//   color: white!important;
-//   font-family: 'Roboto', sans-serif!important;
-//   font-size: 19px!important;
-//   text-decoration: none!important;
-// }
+.btn-primary:hover {
+  background-color: transparent!important;
+  transition: 0.5s ease all!important;
+  color: white!important;
+  font-family: 'Roboto', sans-serif!important;
+}
+
+.btn-primary input {
+  color: white!important;
+  font-family: 'Roboto', sans-serif!important;
+  font-size: 19px!important;
+  text-decoration: none!important;
+}
