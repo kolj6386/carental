@@ -24,6 +24,7 @@ nav {
   width: 100%;
   justify-content: space-around;
   list-style: none;
+  margin-top: 10px;
 }
 
 .nav-links a {
@@ -50,6 +51,10 @@ nav {
   height: 3px;
   background-color: white;
   margin: 5px;
+  &:hover {
+    color: #f74!important;
+    transition: 00.3s all ease-in-out;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -62,12 +67,12 @@ nav {
     position: absolute;
     right: 0px;
     height: 92vh;
-    top: 8vh;
+    top: 7vh;
     background-color: rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 100%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
@@ -86,6 +91,11 @@ nav {
 
 .nav-active {
   transform: translateX(0%);
+}
+
+.nav-transperency {
+  background-color: rgba(0,0,0,0.7);
+  transition: transform 1s ease-in;
 }
 
 @keyframes navLinkFade {
