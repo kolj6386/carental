@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { navSlide } from "../channels/navbar";
+import { cardHover } from "../channels/card_hover";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,5 +39,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  navSlide()
+  navSlide();
+  cardHover();
 })
