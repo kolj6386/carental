@@ -95,3 +95,10 @@
 color: #2fb075;
 font-size: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

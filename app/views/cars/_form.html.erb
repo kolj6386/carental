@@ -1,13 +1,13 @@
 <%= simple_form_for(car) do |f| %>
-<%= f.input :seats, label: 'How many seats does your car have?'%>
-<%= f.input :price, label: 'How much does your car cost per day?'%>
-<%= f.input :make, label: 'What make is your car? e.g Holden' %>
-<%= f.input :model, label: 'What model is your car? e.g Commodore'%>
-<%= f.input :transmission, label: 'Is your car automatic or manual?'%>
-<%= f.input :car_type, label: 'What type of car is it? e.g Sedvan/Van'%>
-<%= f.input :suburb, label: 'Which suburb is your car located in?'%>
+<%= f.input :seats, label: 'How many seats does your car have?', class: "listing-input"%>
+<%= f.input :price, label: 'How much does your car cost per day?', class: "listing-input"%>
+<%= f.input :make, label: 'What make is your car? e.g Holden', class: "listing-input" %>
+<%= f.input :model, label: 'What model is your car? e.g Commodore', class: "listing-input"%>
+<%= f.input :transmission, label: 'Is your car automatic or manual?', class: "listing-input"%>
+<%= f.input :car_type, label: 'What type of car is it? e.g Sedvan/Van', class: "listing-input"%>
+<%= f.input :suburb, label: 'Which suburb is your car located in?', class: "listing-input"%>
 <%= f.input :photo, as: :file %>
 <div class="form-actions">
-    <%= f.button :submit, { class: 'btn btn-primary' } %>
+    <%= f.button :submit, { class: 'btn btn-primary', id: "listing-btn" } %>
   </div>
 <% end %>
