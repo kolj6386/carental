@@ -12,9 +12,9 @@
       <div class="card-top">
         <img class="card-img-top" src=<%= @url %>>
         <div class="card-heading">
-          <h2 class="heading"><%= link_to "#{car.make}, #{car.model}", cars_path(car.id) %></h2>
+          <h2 class="heading"><%= link_to "#{car.make}, #{car.model}", car_path(car.id) %></h2>
           <div class="linebreak"></div>
-          <p><b><%= link_to "Price: #{car.price}", cars_path(car.id), class: "subheading" %></b></p>
+          <p><b><%= link_to "Price: #{car.price}", car_path(car.id), class: "subheading" %></b></p>
         </div>
       </div>
       <div class="car-info">

@@ -108,3 +108,24 @@
   font-size: 19px!important;
   text-decoration: none!important;
 }
+
+.booking-index-card-heading {
+  font-family: 'Roboto', sans-serif!important;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.booking-index-card-subheading {
+  font-family: 'Roboto', sans-serif!important;
+  text-align: left;
+  font-weight: 300;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.card-body {
+  padding: 7px 10px!important;
+}
