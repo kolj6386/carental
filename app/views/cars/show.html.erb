@@ -81,7 +81,7 @@
   <% if current_user == @car.user %>
     <div class="d-flex justify-content-around">
       <%= link_to 'Edit', edit_car_path(@car.id), class: 'btn btn-primary mb-2 w-25', id: "bs-btn-primary" %>
-      <%= link_to 'Delete', car_path(@car.id), class: 'btn btn-danger ml-4 mb-2 w-25', method: 'delete', data: { confirm: "Are you sure?" } %>
+      <%= link_to 'Delete', car_path(@car.id), class: 'btn btn-danger ml-4 mb-2 w-25', id: "bs-show-btn-delete", method: 'delete', data: { confirm: "Are you sure?" } %>
     </div>
   <% end %>
 
