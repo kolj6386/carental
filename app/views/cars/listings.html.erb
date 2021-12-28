@@ -2,8 +2,10 @@
   <h1>Your Listed Cars</h1>
 </div>
 
-<%= render "cars", cars: @cars %>
-<%= link_to "Add a new car", new_car_path, class: "btn btn-primary" %>
+<div class="car-listing-container">
+  <%= render "cars", cars: @cars %>
+  <%= link_to "Add a new car", new_car_path, class: "btn btn-primary" %>
+</div>
 
 <div id="map"
      style="width: 100%; height: 500px;"
