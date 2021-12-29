@@ -12,6 +12,11 @@
 # user.first_name = 'jesse'
 # user.last_name = 'kolb'
 # user.save
+BookingReview.destroy_all
+Car.destroy_all
+User.destroy_all
+
+
 user = User.create!({ email: 'abc@gmail.com', password: '123456', password_confirmation: '123456', first_name: 'jesse', last_name: 'kolb' })
 tr = ['manual', 'automatic']
 
