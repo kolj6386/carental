@@ -96,3 +96,20 @@
   padding: 6px;
   background-color: white;
 }
+
+.create-review {
+
+  &:hover {
+    background-color:rgb(255, 97, 40)!important;
+    border-color: rgb(255, 97, 40)!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #bs-btn-primary {
+  padding: 12px 36px !important;
+  }
+  #bs-show-btn-delete {
+    padding: 12px 36px !important;
+  }
+}
