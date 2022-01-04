@@ -7,22 +7,24 @@
   <% end %>
 
 <div class="card-container">
-  <div class="card">
-    <div>
-      <div class="card-top">
-        <img class="card-img-top" src=<%= @url %>>
-        <div class="card-heading">
-          <h2 class="heading"><%= link_to "#{car.make}, #{car.model}", car_path(car.id) %></h2>
-          <div class="linebreak"></div>
-          <p><b><%= link_to "Price: #{car.price}", car_path(car.id), class: "subheading" %></b></p>
+  <%= link_to car_path(car.id) do %>
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <img class="card-img-top" src=<%= @url %>>
+          <div class="card-heading">
+            <h2 class="heading"><%= "#{car.make}, #{car.model}" %></h2>
+            <div class="linebreak"></div>
+            <p class="subheading"><b><%= "Price: #{car.price}", car_path(car.id), class: "subheading" %></b></p>
+          </div>
+        </div>
+        <div class="car-info">
+          <span><i class="fas fa-chair"></i> <%="#{car.seats}"%></span>
+          <span><i class="fas fa-cog"></i> <%= "#{car.transmission}"%></span>
+          <span><i class="fas fa-compass"></i> <%= "#{car.suburb}"%></span>
         </div>
       </div>
-      <div class="car-info">
-        <span><i class="fas fa-chair"></i> <%="#{car.seats}"%></span>
-        <span><i class="fas fa-cog"></i> <%= "#{car.transmission}"%></span>
-        <span><i class="fas fa-compass"></i> <%= "#{car.suburb}"%></span>
-      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 <% end %>
